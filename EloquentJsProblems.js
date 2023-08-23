@@ -113,3 +113,19 @@
 
 // console.log(chessboard1());
 // console.log(chessboard2(20));
+
+//? Minimum - function that takes two arguments and returns the minimum
+
+//* Solution ezpz
+// const minimum = (num1, num2) => {
+//   if (num1 < num2) {
+//     return num1;
+//   }
+//   return num2;
+// };
+
+// console.log(minimum(10, 20));
+
+//? Recursion - function that accepts a single positive number as a param and returns a boolean
+
+//*Solution
