@@ -177,3 +177,48 @@
 //   return countChar(string, "B");
 // };
 // console.log(countBChars("There are 2 B in this Bentence"));
+
+//? 1. Range - function that accepts a start and end and returns an array of numbers from start to end, inclusive
+//? 2. Sum - function that takes in an array and returns the sum of the values
+//? bonus - modify range to accept a 'step' value, or 1 if none is specified, positive or negative
+
+//* Solution 1
+// const range = (start, end) => {
+//   const nums = [];
+
+//   for (let i = start; i <= end; i++) {
+//     nums.push(i);
+//   }
+//   return nums;
+// };
+// console.log(range(1, 10));
+
+//* Solution 2
+// const sum = (array) => {
+//   let total = 0;
+
+//   for (num of array) {
+//     total += num;
+//   }
+//   return total;
+// };
+// console.log(sum(range(1, 10)));
+
+//* ✨bonus✨
+// this one was fun, I definitely needed help regarding the default -1 because I didn't know you could have ternaries in arguments.
+
+// const stepRange = (start, end, step = start < end ? 1 : -1) => {
+//   const nums = [];
+
+//   if (step > 0) {
+//     for (let i = start; i <= end; i += step) {
+//       nums.push(i);
+//     }
+//   } else {
+//     for (let i = start; i >= end; i += step) {
+//       nums.push(i);
+//     }
+//   }
+//   return nums;
+// };
+// console.log(stepRange(10, 1, -2));
