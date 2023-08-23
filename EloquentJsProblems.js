@@ -129,3 +129,17 @@
 //? Recursion - function that accepts a single positive number as a param and returns a boolean
 
 //*Solution
+// const isEven = (num) => {
+//   if (num < 0) {
+//     console.log("Please enter a positive number!");
+//     return isEven(-num);
+//   } else if (num === 1) {
+//     return false;
+//   } else if (num === 0) {
+//     return true;
+//   } else return isEven(num - 2);
+// };
+
+// console.log(isEven(50));
+// console.log(isEven(75));
+// console.log(isEven(-1));
