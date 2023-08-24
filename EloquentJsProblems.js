@@ -317,3 +317,33 @@
 // };
 
 // console.log(nth(arrayToList([1, 2, 3]), 1));
+
+//? Deep comparison - more mush, let's dig in again after a break
+
+//* Solution
+// const deepEqual = (val1, val2) => {
+//   if (val1 === val2) return true;
+
+//   if (val1 == null || typeof val1 != "object" || (val2 == null) | (typeof val2 != "object"))
+//     return false;
+
+//   let keysOf1 = Object.keys(val1),
+//     keysOf2 = Object.keys(val2);
+
+//   if (keysOf1.length != keysOf2.length) return false;
+
+//   for (let key of keysOf1) {
+//     if (!keysOf2.includes(key) || !deepEqual(val1[key], val2[key])) return false;
+//   }
+//   return true;
+// };
+
+// const val1 = { name: "Geo", age: 34 };
+// const val2 = { name: "Kallyn", age: 34 };
+// const val3 = { age: 34 };
+// const val4 = { age: 34 };
+// const val5 = 23;
+// const val6 = "hwat";
+// console.log(deepEqual(val1, val2));
+// console.log(deepEqual(val3, val4));
+// console.log(deepEqual(val5, val6));
