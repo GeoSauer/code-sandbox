@@ -222,3 +222,98 @@
 //   return nums;
 // };
 // console.log(stepRange(10, 1, -2));
+
+//? Reverse an array (new array and in-place)
+
+//* Solution - new array
+// my version
+// const reverseArray = (array) => {
+//   const reversed = [];
+
+//   for (let i = 0; i <= array.length - 1; i++) {
+//     reversed.push(array[array.length - 1 - i]);
+//   }
+//   return reversed;
+// };
+
+// book version
+// function reverseArray2(array) {
+//   let output = [];
+
+//   for (let i = array.length - 1; i >= 0; i--) {
+//     output.push(array[i]);
+//   }
+//   return output;
+// }
+
+// console.log(reverseArray([1, 2, 3]));
+// console.log(reverseArray2([1, 2, 3]));
+
+//* Solution - in-place
+// my version, too verbose?
+// const reverseArrayInPlace = (array) => {
+//   for (let i = 0; i <= Math.floor(array.length / 2); i++) {
+//     let first = array[i];
+//     let last = array[array.length - 1 - i];
+//     array[i] = last;
+//     array[array.length - 1 - i] = first;
+//   }
+//   return array;
+// };
+
+// book version, too succinct?
+// function reverseArrayInPlace2(array) {
+//   for (let i = 0; i < Math.floor(array.length / 2); i++) {
+//     let old = array[i];
+//     array[i] = array[array.length - 1 - i];
+//     array[array.length - 1 - i] = old;
+//   }
+//   return array;
+// }
+
+// const originalArray = [1, 2, 3];
+// const originalArray2 = [1, 2, 3];
+// console.log(reverseArrayInPlace(originalArray));
+// console.log(reverseArrayInPlace2(originalArray2));
+// console.log(originalArray);
+// console.log(originalArray2);
+
+//? List - this one got my brains a-bubblin, need to chew on it for a bit
+
+//* Solution
+
+// const arrayToList = (array) => {
+//   let list = null;
+
+//   for (let i = array.length - 1; i >= 0; i--) {
+//     list = { value: array[i], rest: list };
+//   }
+//   return list;
+// };
+
+// console.log(arrayToList([1, 2, 3]));
+
+// const listToArray = (list) => {
+//   const array = [];
+
+//   for (let node = list; node; node = node.rest) {
+//     array.push(node.value);
+//   }
+//   return array;
+// };
+
+// console.log(listToArray(arrayToList([1, 2, 3])));
+
+// const prepend = (value, list) => {
+//   return { value, rest: list };
+// };
+
+// console.log(prepend(1, prepend(2, null)));
+
+// const nth = (list, n) => {
+//   if (!list) return undefined;
+//   else if (n === 0) return list.value;
+//   else return nth(list.rest, n - 1);
+// };
+
+// console.log(nth(arrayToList([1, 2, 3]), 1));
